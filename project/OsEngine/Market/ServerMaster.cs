@@ -999,6 +999,11 @@ namespace OsEngine.Market
         {
             for(int i = 0;i < _serversPermissions.Count;i++)
             {
+                if (_serversPermissions[i] == null)
+                {
+                    continue;
+                }
+
                 if (_serversPermissions[i].ServerType == type)
                 {
                     return _serversPermissions[i];
@@ -1017,6 +1022,11 @@ namespace OsEngine.Market
             {
                 for (int i = 0; i < _serversPermissions.Count; i++)
                 {
+                    if (_serversPermissions[i] == null)
+                    {
+                        continue;
+                    }
+
                     if (_serversPermissions[i].ServerType == type)
                     {
                         return _serversPermissions[i];
