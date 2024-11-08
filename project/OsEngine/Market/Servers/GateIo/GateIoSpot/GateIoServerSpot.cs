@@ -971,6 +971,7 @@ namespace OsEngine.Market.Servers.GateIo.GateIoSpot
                     if (_fifoListWebSocketMessage.IsEmpty)
                     {
                         Thread.Sleep(1);
+                        continue;
                     }
                     if (_fifoListWebSocketMessage.TryDequeue(out string message))
                     {

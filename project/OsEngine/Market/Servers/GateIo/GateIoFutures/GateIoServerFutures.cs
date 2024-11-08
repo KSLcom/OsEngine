@@ -24,7 +24,6 @@ using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using WebSocket4Net;
 using GfSecurity = OsEngine.Market.Servers.GateIo.GateIoFutures.Entities.GfSecurity;
 using RestRequestBuilder = OsEngine.Market.Servers.GateIo.GateIoFutures.Entities.RestRequestBuilder;
@@ -1081,6 +1080,7 @@ namespace OsEngine.Market.Servers.GateIo.GateIoFutures
                     if (_fifoListWebSocketMessage.IsEmpty)
                     {
                         Thread.Sleep(1);
+                        continue;
                     }
 
                     if (_fifoListWebSocketMessage.TryDequeue(out string message))
